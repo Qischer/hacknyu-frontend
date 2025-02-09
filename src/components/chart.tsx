@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { createChart, LineSeries } from 'lightweight-charts';
+import { getBackgroundColor, getForegroundColor } from '@/util/get-bgcolor';
 
 interface ChartData {
   time: string,
@@ -22,8 +23,8 @@ function ChartComponent({data}: ChartComponentProps){
       const chart = createChart(chartContainerRef.current, {
         height: 400,
         layout: {
-          background: { color: '#ffffff' },
-          textColor: '#333',
+          background: { color: getBackgroundColor() },
+          textColor: getForegroundColor(),
         },
         grid: {
           vertLines: { color: '#f0f0f0' },
@@ -54,7 +55,7 @@ function ChartComponent({data}: ChartComponentProps){
         chartRef.current.remove();
       }
     };
-  }, []);
+  }, [data]);
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">

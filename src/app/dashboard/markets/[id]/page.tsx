@@ -1,5 +1,7 @@
 import ChartComponent from "@/components/chart"
 
+const url = new URL("https://api.twelvedata.com")
+
 export default async function Page({
   params,
 }: {
@@ -7,12 +9,10 @@ export default async function Page({
 }) {
   const id = (await params).id
   const tdKey = process.env.TD_API_KEY
-
   if (tdKey === undefined) {
     return <div>API key not provided</div>
   }
 
-  const url = new URL("https://api.twelvedata.com")
   const urlParams = {
     symbol: id,
     interval: "1min",
@@ -23,9 +23,9 @@ export default async function Page({
 
   const data = await fetch(url).then(res => res.json())
   const chart_data = data.values.map((value : {"datetime": string, "close": string}) => {
-    return {time: new Date(value["datetime"]).getTime(), value: Number(value["close"])}
+    return {time: new Date(value["datetime"]).getTime() / 10, value: Number(value["close"])}
   })
-  // console.log(chart_data)
+
   chart_data.sort((x: {time: number} ,y : {time: number}) => x.time - y.time)
   
   return (

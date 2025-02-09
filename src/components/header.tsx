@@ -6,9 +6,6 @@ export function Header() {
       <div className="flex h-16 items-center px-4">
         <div className="ml-auto flex items-center space-x-4">
           <Button>
-            Settings
-          </Button>
-          <Button>
             Account
           </Button>
         </div>
