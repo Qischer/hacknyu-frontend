@@ -4,9 +4,7 @@ import { Home, BarChart2, PieChart, Activity, Settings } from "lucide-react"
 const navItems = [
   { icon: Home, label: "Dashboard", href: "/dashboard" },
   { icon: BarChart2, label: "Markets", href: "/dashboard/markets" },
-  { icon: PieChart, label: "Portfolio", href: "/dashboard/portfolio" },
   { icon: Activity, label: "Playground", href: "/dashboard/playground" },
-  { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ]
 
 export function Sidebar() {
@@ -19,8 +17,7 @@ export function Sidebar() {
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.href}>
-              <Link
-                href={item.href}
+              <Link href={item.href}
                 className={
                   "flex items-center space-x-3 rounded-lg px-3 py-2 text-gray-600 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }

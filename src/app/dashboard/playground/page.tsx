@@ -1,4 +1,5 @@
 'use client'
+import ChatBox from "@/components/ChatBox";
 import { PlotComponent } from "@/components/plot-component";
 
 import { usePgContext } from "@/contexts/playground-context"
@@ -13,7 +14,9 @@ export default function Playground() {
     const url = new URL("http://localhost:3000/api/" + currentState.dropdownValue)
     const params = {
       symbol: currentState.textValue,
-      smaTime: currentState.slider1Value
+      interval: currentState.numValue,
+      start: currentState.date1Value,
+      end: currentState.date2Value
     }
     url.search = new URLSearchParams(params).toString()
 

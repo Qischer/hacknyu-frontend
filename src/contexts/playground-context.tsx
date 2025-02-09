@@ -6,6 +6,9 @@ import { createContext, useState, useContext } from "react"
 type AppState = {
   dropdownValue: string
   textValue: string
+  numValue: number
+  date1Value: string
+  date2Value: string
   slider1Value: number[]
   slider2Value: number[]
 }
@@ -20,6 +23,9 @@ type AppContextType = {
 const initialState: AppState = {
   dropdownValue: "bb",
   textValue: "",
+  numValue: 0,
+  date1Value: "2025-01-01",
+  date2Value: "2025-01-02",
   slider1Value: [50],
   slider2Value: [50],
 }
