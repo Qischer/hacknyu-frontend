@@ -40,7 +40,9 @@ ByOnePercent is a web application developed during HackNYU 2025. It serves as a 
    The app will be available at [http://localhost:3000](http://localhost:3000)
 
 ## 🎥 Demo Video
-Check out our project demo on YouTube: [Watch Here](https://www.youtube.com/watch?v=RC6Q0RhLIcc)
+Check out our project demo on YouTube:
+[![Demo Video](https://img.youtube.com/vi/RC6Q0RhLIcc/0.jpg)](https://www.youtube.com/watch?v=RC6Q0RhLIcc)
+
 
 ## 📜 License
 This project is licensed under the MIT License.
